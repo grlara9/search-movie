@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export const Form = () =>{
+ const Form = () =>{
+    const [input, setInput] = useState("");
+
+    const handleInput =(e)=>{
+        setInput(e.target.value)
+    }
+    console.log(input)
 return(
-    <h2>hello</h2>
+   <form>
+      
+       <input
+        type="text"
+        value={input}
+        onChange={handleInput}
+        placeholder="Enter movie"
+        />
+   </form>
 )
 }
+export default Form
