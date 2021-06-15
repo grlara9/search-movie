@@ -7,6 +7,11 @@ import React, { useState } from 'react'
         setInput(e.target.value)
     }
     console.log(input)
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        Props.search(input)
+    }
 return(
    <form>
       
@@ -16,6 +21,7 @@ return(
         onChange={handleInput}
         placeholder="Enter movie"
         />
+        <button type="submit" onClick={handleFormSubmit}/>
    </form>
 )
 }
