@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
- const Form = () =>{
+ const Form = (props) =>{
     const [input, setInput] = useState("");
 
     const handleInput =(e)=>{
@@ -10,7 +10,7 @@ import React, { useState } from 'react'
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        Props.search(input)
+        props.search(input)
     }
 return(
    <form>

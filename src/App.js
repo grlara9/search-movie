@@ -18,9 +18,18 @@ function App() {
       console.log("Error: ", err)
     })
   })
+
+  const search = input =>{
+    axios.get(`https://www.omdbapi.com/?s=${input}&apikey=709d62e0`)
+    .then(res=>{
+      console.log('this is user:', res)
+    })
+
+  }
+
   return (
     <div className="App">
-     <Search />
+     <Search search={search} />
     </div>
   );
 }
