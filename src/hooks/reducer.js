@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+
 
 
 export const initialState ={
@@ -15,7 +15,7 @@ export const reducer = (state, action) =>{
                 loading: true,
                 errorMsj: null
             };
-            case "SEARCH_MOVIES_REQUEST":
+            case "SEARCH_MOVIES_SUCCESS":
                 return{
                     ...state,
                     loading: false,

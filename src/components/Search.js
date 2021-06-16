@@ -6,7 +6,7 @@ import React, { useState } from 'react'
     const handleInput =(e)=>{
         setInput(e.target.value)
     }
-    console.log(input)
+    
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
