@@ -3,6 +3,7 @@ import {useStateValue} from './context/stateProvider'
 import axios from 'axios'
 import './App.css';
 import Search from './components/Search'
+import Movies from './components/Movies'
 
 const MOVIE_URl = "https://www.omdbapi.com/?s=man&apikey=709d62e0";
 
@@ -38,11 +39,24 @@ const [state, dispatch]= useStateValue();
 
   }
   
-                
+     const {movies, loading, errorMsj} = state;           
   return (
     <div className="App">
-     <Search search={search} />
+   
+    <Search search={search} />
+    <p className="App-intro">Sharing a few of our favourite movies</p>
+    <div className="movies">
+      {loading && !errorMsj ? (
+        <span>loading... </span>
+      ) : errorMsj ? (
+        <div className="errorMessage">{errorMsj}</div>
+      ) : (
+        movies.map((movie, index) => (
+          <Movies key={`${index}-${movie.Title}`} movie={movie} />
+        ))
+      )}
     </div>
+  </div>
   );
 }
 
