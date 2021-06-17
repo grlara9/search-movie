@@ -7,7 +7,8 @@ export const initialState ={
     errorMsj: null
 }
 
-export const reducer = (state, action) =>{
+ const reducer = (state, action) =>{
+     console.log(action)
     switch (action.type){
         case "SEARCH_MOVIE_REQUEST":
             return{
@@ -32,3 +33,4 @@ export const reducer = (state, action) =>{
                         return state;
     }
 }
+export default reducer

@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer} from 'react'
-import { initialState, reducer } from './hooks/reducer'
+import {useStateValue} from './context/stateProvider'
 import axios from 'axios'
 import './App.css';
 import Search from './components/Search'
@@ -10,8 +10,8 @@ const MOVIE_URl = "https://www.omdbapi.com/?s=man&apikey=709d62e0";
 
 const App =()=> {
 
- const [state, dispatch] = useReducer(reducer, initialState)
- 
+const [state, dispatch]= useStateValue();
+ console.log("movies",state.movies)
 
   useEffect(()=>{
     axios.get(MOVIE_URl)
