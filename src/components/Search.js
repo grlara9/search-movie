@@ -1,28 +1,28 @@
 import React, { useState } from 'react'
 
- const Form = (props) =>{
-    const [input, setInput] = useState("");
+ const Search = (props) =>{
+    const [searchValue, setSearchValue] = useState("");
 
     const handleInput =(e)=>{
-        setInput(e.target.value)
+        setSearchValue(e.target.value)
     }
-    
+    console.log(searchValue)
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        props.search(input)
+        props.search(searchValue)
     }
 return(
    <form>
       
        <input
         type="text"
-        value={input}
+        value={searchValue}
         onChange={handleInput}
         placeholder="Enter movie"
         />
-        <button type="submit" onClick={handleFormSubmit}/>
+        <button type="submit" onClick={handleFormSubmit} value="SEARCH"/>
    </form>
 )
 }
-export default Form
+export default Search
