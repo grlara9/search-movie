@@ -23,6 +23,6 @@ return(
         />
         <button type="submit" onClick={handleFormSubmit} value="SEARCH" />
    </form>
-)
+) 
 }
 export default Search
