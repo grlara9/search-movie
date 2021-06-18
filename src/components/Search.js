@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import './Search.css'
  const Search = (props) =>{
     const [searchValue, setSearchValue] = useState("");
 
@@ -21,7 +21,7 @@ return(
         onChange={handleInput}
         placeholder="Enter movie"
         />
-        <button type="submit" onClick={handleFormSubmit} value="SEARCH"/>
+        <button type="submit" onClick={handleFormSubmit} value="SEARCH" />
    </form>
 )
 }
