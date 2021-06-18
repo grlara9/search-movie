@@ -16,10 +16,11 @@ const [state, dispatch]= useStateValue();
 
   useEffect(()=>{
     axios.get(MOVIE_URl)
-    .then(response => {
+    .then(promise => {
+      console.log("promise", promise)
      dispatch({
        type:"SEARCH_MOVIES_SUCCESS",
-       payload: response
+       payload:promise.data.Search
       })
     })
     .catch(err =>{
@@ -30,16 +31,16 @@ const [state, dispatch]= useStateValue();
 
   const search = input =>{
     axios.get(`https://www.omdbapi.com/?s=${input}&apikey=709d62e0`)
-    .then(response=>{
+    .then(promise=>{
       dispatch({
         type: "SEARCH_MOVIES_SUCCESS",
-        payload: response
+        payload: promise.data.Search
       })
     })
 
   }
   
-     const {movies, loading, errorMsj} = state;           
+  const {movies, loading, errorMsj} = state;           
   return (
     <div className="App">
    
@@ -51,8 +52,12 @@ const [state, dispatch]= useStateValue();
       ) : errorMsj ? (
         <div className="errorMessage">{errorMsj}</div>
       ) : (
-        movies.map((movie, index) => (
-          <Movies key={`${index}-${movie.Title}`} movie={movie} />
+        movies.map(movie => (
+          <Movies
+           
+            Title={movie.Title}
+            
+            />
         ))
       )}
     </div>
