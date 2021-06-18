@@ -56,6 +56,7 @@ const [state, dispatch]= useStateValue();
           <Movies
            
             Title={movie.Title}
+            Poster={movie.Poster}
             
             />
         ))
