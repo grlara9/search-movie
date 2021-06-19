@@ -53,12 +53,16 @@ const [state, dispatch]= useStateValue();
         <div className="errorMessage">{errorMsj}</div>
       ) : (
         movies.map(movie => (
-          <Movies
-           
-            Title={movie.Title}
-            Poster={movie.Poster}
-            
-            />
+          <div className="movie-app">
+            <div className="row">
+              <Movies
+              
+                Title={movie.Title}
+                Poster={movie.Poster}
+                
+                />
+            </div>
+          </div>
         ))
       )}
     </div>
