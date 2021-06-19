@@ -2,3 +2,10 @@ body{
   background: #141414;
   color:#ffffff;
 }
+.movies{
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
