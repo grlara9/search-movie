@@ -2,7 +2,7 @@ body{
   background: #141414;
   color:#ffffff;
 }
-.movies{
+.movies > .row{
   display:flex;
   flex-direction: row;
   width: 100%;

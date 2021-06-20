@@ -52,18 +52,9 @@ const [state, dispatch]= useStateValue();
       ) : errorMsj ? (
         <div className="errorMessage">{errorMsj}</div>
       ) : (
-        movies.map(movie => (
-         
-            <div className="row">
-              <Movies
-              
-                Title={movie.Title}
-                Poster={movie.Poster}
-                
-                />
-            </div>
-          
-        ))
+       
+          <Movies movies={movies} />
+      
       )}
     </div>
   </div>
