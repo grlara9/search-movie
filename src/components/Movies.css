@@ -3,6 +3,7 @@ display: flex;
 overflow-y: hidden;
   overflow-x: scroll;
   padding: 20px;
+ 
 }
 
 .row__movies{
@@ -17,6 +18,14 @@ overflow-y: hidden;
     display: none;
   }
 
-  .row__movies:hover {
-    transform: scale(1.08);
+  
+
+  img{
+      padding-right: 8px;
+  }
+
+  img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+
   }

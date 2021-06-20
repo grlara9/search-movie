@@ -52,9 +52,9 @@ const [state, dispatch]= useStateValue();
       ) : errorMsj ? (
         <div className="errorMessage">{errorMsj}</div>
       ) : (
-       
+       <div className="row">
           <Movies movies={movies} />
-      
+      </div>
       )}
     </div>
   </div>
