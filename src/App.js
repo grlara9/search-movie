@@ -2,6 +2,7 @@ import React, { useEffect, useReducer} from 'react'
 import {useStateValue} from './context/stateProvider'
 import axios from 'axios'
 import './App.css';
+import Header from './components/Header'
 import Search from './components/Search'
 import Movies from './components/Movies'
 
@@ -43,8 +44,11 @@ const [state, dispatch]= useStateValue();
   const {movies, loading, errorMsj} = state;           
   return (
     <div className="App">
-   
-    <Search search={search} />
+   <Header>
+     <h2>Movies</h2>
+      <Search search={search} />
+   </Header>
+   <main>
     <p className="App-intro">Sharing a few of our favourite movies</p>
     <div className="movies">
       {loading && !errorMsj ? (
@@ -57,6 +61,7 @@ const [state, dispatch]= useStateValue();
       </div>
       )}
     </div>
+    </main>
   </div>
   );
 }

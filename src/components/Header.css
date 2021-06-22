@@ -1,0 +1,15 @@
+.movie__header{
+    background-color: red;
+    color:white;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+main{
+    margin-top: 5rem;
+}
