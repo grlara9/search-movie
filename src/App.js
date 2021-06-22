@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer} from 'react'
+import React, { useEffect} from 'react'
 import {useStateValue} from './context/stateProvider'
 import axios from 'axios'
 import './App.css';
@@ -46,7 +46,9 @@ const [state, dispatch]= useStateValue();
     <div className="App">
    <Header>
      <h2>Movies</h2>
+     <div className="search__bar">
       <Search search={search} />
+      </div>
    </Header>
    <main>
     <p className="App-intro">Sharing a few of our favourite movies</p>

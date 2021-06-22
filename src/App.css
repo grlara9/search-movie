@@ -9,3 +9,14 @@ body{
   
 }
 
+h2{
+  margin-left: 12px;
+  
+}
+
+.search__bar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
