@@ -30,3 +30,18 @@ img:hover {
     cursor: pointer;
 
   }
+
+.overlay{
+    position:absolute;
+    background-color: rgba(0,0,0,0.8);
+    width: 100%;
+    transition: 0.5s;
+    opacity:0;
+    font-size: 18px;
+    padding: 20px;
+    text-align: center;
+}
+
+.row__movies:hover .overlay{
+    opacity: 1;
+}
