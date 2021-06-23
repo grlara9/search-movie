@@ -5,7 +5,7 @@ import './App.css';
 import Header from './components/Header'
 import Search from './components/Search'
 import Movies from './components/Movies'
-
+import AddLike from './components/AddLike'
 const MOVIE_URl = "https://www.omdbapi.com/?s=man&apikey=709d62e0";
 
 
@@ -59,7 +59,7 @@ const [state, dispatch]= useStateValue();
         <div className="errorMessage">{errorMsj}</div>
       ) : (
        <div className="row">
-          <Movies movies={movies} />
+          <Movies movies={movies} AddLike={AddLike} />
       </div>
       )}
     </div>
