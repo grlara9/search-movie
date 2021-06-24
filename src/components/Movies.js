@@ -10,7 +10,7 @@ const Movies =(props)=>{
         {props.movies.map(movie => (
           <>
           <img src={movie.Poster} />
-          <div className="overlay">
+          <div onClick={()=>props.handleLikeClick(movie)} className="overlay">
             <AddLike />
           </div>
        </>

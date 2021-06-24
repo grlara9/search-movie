@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react'
+import React, { useEffect, useState} from 'react'
 import {useStateValue} from './context/stateProvider'
 import axios from 'axios'
 import './App.css';
@@ -62,7 +62,9 @@ const [state, dispatch]= useStateValue();
         <div className="errorMessage">{errorMsj}</div>
       ) : (
        <div className="row">
-          <Movies movies={movies} handleLikesClick={addLikeMovies} AddLike={AddLike} />
+          <Movies movies={movies} 
+          handleLikeClick={addLikeMovies} 
+          AddLike={AddLike} />
       </div>
       )}
     </div>
