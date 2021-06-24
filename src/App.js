@@ -11,7 +11,7 @@ const MOVIE_URl = "https://www.omdbapi.com/?s=man&apikey=709d62e0";
 
 
 const App =()=> {
-
+const [likes, setLikes] = useState([])
 const [state, dispatch]= useStateValue();
  console.log("movies",state.movies)
 
@@ -38,9 +38,12 @@ const [state, dispatch]= useStateValue();
         payload: promise.data.Search
       })
     })
-
   }
   
+  const addLikeMovies =(movie)=>{
+    const newLikeList = [...likes, movie]
+    setLikes(newLikeList);
+  }
   const {movies, loading, errorMsj} = state;           
   return (
     <div className="App">
@@ -59,7 +62,7 @@ const [state, dispatch]= useStateValue();
         <div className="errorMessage">{errorMsj}</div>
       ) : (
        <div className="row">
-          <Movies movies={movies} AddLike={AddLike} />
+          <Movies movies={movies} handleLikesClick={addLikeMovies} AddLike={AddLike} />
       </div>
       )}
     </div>
