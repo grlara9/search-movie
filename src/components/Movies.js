@@ -6,12 +6,17 @@ const Movies =(props)=>{
   const AddLike = props.AddLike; 
    return(
      <>
-      <div className="movies__list">
+      <div className="movie__list">
         {props.movies.map(movie => (
-          <div className="movies">
+          <div className="movie">
           <h4>{movie.Title}</h4>
-          <img src={movie.Poster} />
-          <div onClick={()=>props.handleLikeClick(movie)} className="overlay">
+          
+          <img 
+          className="movie__img"
+          src={movie.Poster}
+          />
+          
+          <div className="overlay" onClick={()=>props.handleLikeClick(movie)} >
             <AddLike />
           </div>
         </div>
