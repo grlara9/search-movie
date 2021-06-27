@@ -1,35 +1,31 @@
-.row__movies{
-display: flex;
-overflow-y: hidden;
-  overflow-x: scroll;
-  padding: 20px;
-  
+.movies__list{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 5px 5px 32px 5px rgba(0,0,0,0.43); 
+    box-shadow: 5px 5px 32px 5px rgba(0,0,0,0.43);
 }
 
 .row__movies{
     object-fit: contain;
     width: 100%;
+    max-height: 100px;
     transition: transform 450ms;
     margin-right: 10px;
-    
+}
+
+.row__movies{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 20px;
 }
 
 .row__movies::-webkit-scrollbar {
     display: none;
 }
 
-
-
-img{
-    padding-right: 8px;
-}
-
-img:hover {
-    transform: scale(1.05);
-   
-    cursor: pointer;
-
-  }
 
 .overlay{
     position:absolute;

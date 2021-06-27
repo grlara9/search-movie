@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Header from './Header'
 import './Search.css'
  const Search = (props) =>{
     const [searchValue, setSearchValue] = useState("");
@@ -13,6 +14,8 @@ import './Search.css'
         props.search(searchValue)
     }
 return(
+<Header>
+    <h1>Movies App</h1>
    <form>
       
        <input
@@ -23,6 +26,7 @@ return(
         />
         <button type="submit" onClick={handleFormSubmit} value="SEARCH" />
    </form>
+   </Header>
 ) 
 }
 export default Search

@@ -14,7 +14,7 @@ const App =()=> {
 const [likes, setLikes] = useState([])
 const [state, dispatch]= useStateValue();
  console.log("movies",state.movies)
-
+console.log('like', likes)
   useEffect(()=>{
     axios.get(MOVIE_URl)
     .then(promise => {
@@ -47,12 +47,12 @@ const [state, dispatch]= useStateValue();
   const {movies, loading, errorMsj} = state;           
   return (
     <div className="App">
-   <Header>
+   
      <h2>Movies</h2>
      <div className="search__bar">
       <Search search={search} />
       </div>
-   </Header>
+  
    <main>
     <p className="App-intro">Sharing a few of our favourite movies</p>
     <div className="movies">
@@ -60,7 +60,7 @@ const [state, dispatch]= useStateValue();
         <span>loading... </span>
       ) : errorMsj ? (
         <div className="errorMessage">{errorMsj}</div>
-      ) : (
+      ) : ( 
        <div className="row">
           <Movies movies={movies} 
           handleLikeClick={addLikeMovies} 

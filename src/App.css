@@ -4,8 +4,14 @@ body{
 }
 
 .row{
-  margin-left: 20px;
-  color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px;
+  background-color: blanchedalmond;
+  overflow-x: auto;
+	flex-wrap: nowrap;
   
 }
 
