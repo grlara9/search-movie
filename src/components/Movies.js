@@ -10,7 +10,7 @@ const Movies =(props)=>{
         {props.movies.map(movie => (
           <div className="movie">
           <h4>{movie.Title}</h4>
-          
+          {movie.id}
           <img 
           className="movie__img"
           src={movie.Poster}

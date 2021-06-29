@@ -1,8 +1,9 @@
 import React from 'react'
 
-const LikeMovies = () =>{
+const LikeMovies = (props) =>{
     return(
         <h1>save page</h1>
+        
     )
 }
 

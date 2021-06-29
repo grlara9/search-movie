@@ -78,7 +78,7 @@ console.log('like', likes)
 
   </Switch>
         <Route path="/Like">
-          <LikeMovies />
+          <LikeMovies likes={likes}/>
         </Route>
   </Router>
   );
