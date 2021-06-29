@@ -1,7 +1,9 @@
 import React, { useEffect, useState} from 'react'
 import {useStateValue} from './context/stateProvider'
+import { BrowserRouter as Router, Route, Switch }  from 'react-router-dom';
 import axios from 'axios'
 import './App.css';
+import LikeMovies from './components/LikeMovies'
 import Header from './components/Header'
 import Search from './components/Search'
 import Movies from './components/Movies'
@@ -46,6 +48,7 @@ console.log('like', likes)
   }
   const {movies, loading, errorMsj} = state;           
   return (
+    <Router>
     <div className="App">
    
      <h2>Movies</h2>
@@ -70,6 +73,14 @@ console.log('like', likes)
     </div>
     </main>
   </div>
+
+  <Switch>
+
+  </Switch>
+        <Route path="/Like">
+          <LikeMovies />
+        </Route>
+  </Router>
   );
 }
 

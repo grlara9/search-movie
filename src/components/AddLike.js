@@ -3,11 +3,11 @@ import React from 'react'
 const AddLike = () =>{
     return(
         <>
-        <span className="">Like</span>
+        <span className="">Like </span>
         <svg xmlns="http://www.w3.org/2000/svg" 
         width="16" 
         height="16" 
-        fill="currentColor" 
+        fill="white" 
         class="bi bi-hand-thumbs-up" 
         viewBox="0 0 16 16">
 

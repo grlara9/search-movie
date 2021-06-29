@@ -43,7 +43,7 @@
 .overlay{
     position:absolute;
     bottom: .5%;
-    
+    font-weight: bold;
     background-color: rgba(0,0,0,0.8);
     width: 270px;
     transition: 0.5s;
