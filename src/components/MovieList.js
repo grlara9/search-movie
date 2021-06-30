@@ -9,11 +9,9 @@ import AddLike from './AddLike'
 const MOVIE_URl = "https://www.omdbapi.com/?s=man&apikey=709d62e0";
 
 const MovieList = () =>{
-    const [likes, setLikes] = useState([])
+    //const [likes, setLikes] = useState([])
     const [state, dispatch]= useStateValue();
 
-     console.log("movies",state.movies)
-    console.log('like', likes)
       useEffect(()=>{
         axios.get(MOVIE_URl)
         .then(promise => {
@@ -40,8 +38,10 @@ const MovieList = () =>{
       }
       
       const addLikeMovies =(movie)=>{
-        const newLikeList = [...likes, movie]
-        setLikes(newLikeList);
+       dispatch({
+           type: "ADD_TO_FAVORITES",
+           value: [movie]
+       })
       }
       const {movies, loading, errorMsj} = state;           
       return (

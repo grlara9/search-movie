@@ -4,7 +4,8 @@
 export const initialState ={
     loading: true,
     movies:[],
-    errorMsj: null
+    errorMsj: null,
+    like:[]
 }
 
  const reducer = (state, action) =>{
@@ -29,6 +30,12 @@ export const initialState ={
                         loading: false,
                         errorMsj: action.error
                     };
+
+                case "ADD_TO_FAVORITES":
+                    return{
+                        ...state,
+                        like: action.value
+                    };    
                     default:
                         return state;
     }
