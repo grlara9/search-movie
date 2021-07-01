@@ -3,8 +3,8 @@ import './Header.css'
 const Header = (props) =>{
     return(
         <header className="movie__header">
-            {props.children}
-        </header>
+           <h2>{props.title}</h2> 
+        </header> 
     )
 }
 export default Header

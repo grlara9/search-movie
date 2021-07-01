@@ -14,8 +14,8 @@ import './Search.css'
         props.search(searchValue)
     }
 return(
-<Header>
-    <h1>Movies App</h1>
+
+    
    <form>
       
        <input
@@ -24,9 +24,9 @@ return(
         onChange={handleInput}
         placeholder="Enter movie"
         />
-        <button type="submit" onClick={handleFormSubmit} value="SEARCH" />
+        <button type="submit"onClick={handleFormSubmit}>SEARCH</button>
    </form>
-   </Header>
+  
 ) 
 }
 export default Search

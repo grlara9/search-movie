@@ -47,8 +47,6 @@ const MovieList = () =>{
       return (
       
         <div className="App">
-       
-         <h2>Movies</h2>
          <div className="search__bar">
           <Search search={search} />
           </div>

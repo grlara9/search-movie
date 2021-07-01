@@ -1,13 +1,18 @@
 import React from 'react'
+import {useStateValue} from '../context/stateProvider'
 
 const LikeMovies = (props) =>{
+
+    const [state, dispatch]= useStateValue();
+
+    const {like} = state; 
     return(
         <div className="hola">
         <h1>save page</h1>
 
-        {props.likes.map(like=>{
-            <h2>{like.Title}</h2>
-            console.log("like", like)
+        {props.like.map(likes=>{
+            <h2>{likes.Title}</h2>
+            console.log("like", likes)
 
         })}
         </div>
