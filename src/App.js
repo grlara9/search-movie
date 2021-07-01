@@ -12,20 +12,19 @@ import './App.css';
 
 const App =()=> {
 return(
-<Router>
-  <Header title="Movie App" />
-  <div className="container">
-  <Switch>
-    <Route>
-      <MovieList exact path="/" />
-    </Route>
-     <Route path="/Like">
-        <LikeMovies />
-      </Route>
-  </Switch>
-  </div>
+  <Router>
+    <Header title="Movie App" />
+      <div className="container">
+        <Switch>
+          <Route>
+            <MovieList exact path="/" />
+          </Route>
+          <Route path="/favorites">
+              <LikeMovies />
+            </Route>
+        </Switch>
+      </div>
   </Router>
-       
   );
 }
 

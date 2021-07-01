@@ -52,7 +52,6 @@ const MovieList = () =>{
           </div>
       
        <main>
-        <p className="App-intro">Sharing a few of our favourite movies</p>
         <div className="movies">
           {loading && !errorMsj ? (
             <span>loading... </span>
