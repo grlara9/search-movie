@@ -50,17 +50,18 @@ const App =()=> {
 console.log("fghj", movies)
 
 return (
-  <div className="App">
-    <div className="m-container">
-      <Header text="HOOKED" />
-
+  
+    <div className="container">
+      <Header title="Movie app" />
+<main>
       <Search search={search} />
 
       <p className="App-intro">Sharing a few of our favourite movies</p>
 
      <MovieList loading={loading} movies={movies} addLikeMovies={addLikeMovies}/>
+     </main>
     </div>
-  </div>
+
 );
 };
 
