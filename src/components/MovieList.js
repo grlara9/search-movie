@@ -2,6 +2,8 @@ import React from 'react'
 import Spinner from './Spinner'
 import Movies from './Movies'
 import  AddLike from './AddLike'
+import './MovieList.css'
+
 const MovieList = ({movies, loading , addLikeMovies}) => {
  
   return loading ?  (
