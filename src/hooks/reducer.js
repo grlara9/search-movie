@@ -1,6 +1,3 @@
-
-
-
 export const initialState ={
     loading: true,
     movies:[],
@@ -8,7 +5,7 @@ export const initialState ={
     like:[]
 }
 
- const reducer = (state, action) =>{
+ export const reducer = (state, action) =>{
      console.log(action)
     switch (action.type){
         case "SEARCH_MOVIE_REQUEST":
@@ -40,4 +37,3 @@ export const initialState ={
                         return state;
     }
 }
-export default reducer

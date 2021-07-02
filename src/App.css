@@ -11,12 +11,14 @@ body{
 
   padding-top: 2rem;
   
+}
   
   
- 
+ main{
+   margin-top: 3rem;
+ }
 	
   
-}
 
 h2{
   margin-left: 12px;
