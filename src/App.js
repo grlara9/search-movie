@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect } from 'react'
 import Header from './components/Header'
-import Movie from './components/MovieList'
+import MovieList from './components/MovieList'
 import LikeMovies from './components/LikeMovies'
 
 import Search from './components/Search'
@@ -45,18 +45,9 @@ const App =()=> {
        value: [movie]
    })
   }
-
-  const {movies , errorMsj, loading} = state
-  const retrievedMovies =
-  loading && !errorMsj ? (
-   <span>...Loading</span>
-  ) : errorMsj ? (
-    <div className="errorMessage">{errorMsj}</div>
-  ) : (
-    movies.map((movie, index) => (
-      <Movie key={`${index}-${movie.Title}`} movie={movie} />
-    ))
-  );
+  const { movies, errorMessage, loading } = state;
+ 
+console.log("fghj", movies)
 
 return (
   <div className="App">
@@ -67,7 +58,7 @@ return (
 
       <p className="App-intro">Sharing a few of our favourite movies</p>
 
-      <div className="movies">{retrievedMovies}</div>
+     <MovieList loading={loading} movies={movies} addLikeMovies={addLikeMovies}/>
     </div>
   </div>
 );

@@ -1,21 +1,21 @@
 import React from 'react'
-
-const Movie = ({ movie }) => {
+import Spinner from './Spinner'
+import Movies from './Movies'
+import  AddLike from './AddLike'
+const MovieList = ({movies, loading , addLikeMovies}) => {
  
-  return (
-    <div className="movie">
-      <h2>{movie.Title}</h2>
-      <div>
-        <img
-          width="200"
-          alt={`The movie titled: ${movie.Title}`}
-          src={ movie.Poster}
-        />
-      </div>
-      <p>({movie.Year})</p>
-    </div>
-  );
+  return loading ?  (
+    <Spinner />
+  ):(
+    <section className="movies">
+      {movies.map((movie)=>(
+        <Movies key={movie.id} movie={movie} handleLikeClick={addLikeMovies} AddLike={AddLike}/>
+      ))}
+    </section>
+  )
+   
+  
 };
 
 
-export default Movie
+export default MovieList

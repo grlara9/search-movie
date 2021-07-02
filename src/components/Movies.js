@@ -1,13 +1,15 @@
 import React from 'react'
 import './Movies.css'
+
+
 //Here is your key: 709d62e0
 
-const Movies =(props)=>{
-  const AddLike = props.AddLike; 
+const Movies =({movie, handleLikeClick, AddLike})=>{
+  
    return(
      <>
       <div className="movie__list">
-        {props.movies.map(movie => (
+       
           <div className="movie">
           <h4>{movie.Title}</h4>
           {movie.id}
@@ -16,13 +18,12 @@ const Movies =(props)=>{
           src={movie.Poster}
           />
           
-          <div className="overlay" onClick={()=>props.handleLikeClick(movie)} >
+          <div className="overlay" onClick={()=>handleLikeClick(movie)} >
             <AddLike />
           </div>
         </div>
       
-      ))
-    }
+     
     </div>
   </>
     )
