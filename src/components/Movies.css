@@ -44,7 +44,8 @@
     position:absolute;
     bottom: .5%;
     font-weight: bold;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(134, 128, 128, 0.8);
+    
     width: 85%;
     transition: 0.5s;
     opacity:0;

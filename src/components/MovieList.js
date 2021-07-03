@@ -4,11 +4,13 @@ import Movies from './Movies'
 import  AddLike from './AddLike'
 import './MovieList.css'
 
-const MovieList = ({movies, loading , addLikeMovies}) => {
+const MovieList = ({movies, loading , errorMsj, addLikeMovies}) => {
  
-  return loading ?  (
+  return loading && !errorMsj ?  (
     <Spinner />
-  ):(
+  ): errorMsj ? (
+    <div className="error__msj">{errorMsj}</div>
+  ): (
     <section className="movies">
       {movies.map((movie)=>(
         <Movies key={movie.id} movie={movie} handleLikeClick={addLikeMovies} AddLike={AddLike}/>

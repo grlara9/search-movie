@@ -37,6 +37,11 @@ const App =()=> {
         payload: promise.data.Search
       })
     })
+    .catch(dispatch({
+      type: "SEARCH_MOVIES_FAILURE",
+      errorMsj: "could not find"
+
+    }))
   }
   
   const addLikeMovies =(movie)=>{
@@ -45,10 +50,10 @@ const App =()=> {
        value: [movie]
    })
   }
-  const { movies, errorMessage, loading } = state;
+  const { movies, errorMessage, loading, like } = state;
  
 console.log("fghj", movies)
-
+console.log("likes", like)
 return (
   
     <div className="container">
@@ -59,6 +64,8 @@ return (
       <p className="App-intro">Sharing a few of our favourite movies</p>
 
      <MovieList loading={loading} movies={movies} addLikeMovies={addLikeMovies}/>
+
+     <LikeMovies />
      </main>
     </div>
 

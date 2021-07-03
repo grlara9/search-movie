@@ -1,14 +1,20 @@
 import React from 'react'
-import {useStateValue} from '../context/stateProvider'
+import Spinner from './Spinner';
 
-const LikeMovies = (props) =>{
+const LikeMovies = (like, loading , errorMsj) =>{
 
-    
-    return(
-        <div className="hola">
-      
-        </div>
-    )
+   
+    return loading && !errorMsj ?  (
+        <Spinner />
+      ): errorMsj ? (
+        <div className="error__msj">{errorMsj}</div>
+      ): (
+        <section className="movies">
+          {like.map((likes)=>(
+           console.log("asdfghjkl", likes)
+          ))}
+        </section>
+      )
 }
 
 export default LikeMovies
