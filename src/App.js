@@ -50,6 +50,13 @@ const App =()=> {
        value: [movie]
    })
   }
+
+  const removeFavorites = (id) =>{
+    dispatch({
+      type:"REMOVE_FROM_FAVORITES",
+      value: id
+    })
+  }
   const { movies, errorMessage, loading, like } = state;
  
 console.log("fghj", movies)
@@ -63,9 +70,9 @@ return (
 
       <p className="App-intro">Sharing a few of our favourite movies</p>
 
+     <LikeMovies like={like} />
      <MovieList loading={loading} movies={movies} addLikeMovies={addLikeMovies}/>
 
-     <LikeMovies />
      </main>
     </div>
 
