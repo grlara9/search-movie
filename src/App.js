@@ -70,8 +70,8 @@ return (
 
       <p className="App-intro">Sharing a few of our favourite movies</p>
 
-     <LikeMovies like={like} />
      <MovieList loading={loading} movies={movies} addLikeMovies={addLikeMovies}/>
+     <LikeMovies like={like} removeFavorites={removeFavorites}/>
 
      </main>
     </div>

@@ -32,7 +32,11 @@ export const initialState ={
                     return{
                         ...state,
                         like: action.value
-                    };    
+                    }; 
+                    
+                    case "REMOVE_FROM_FAVORITES":
+                       
+                        
                     default:
                         return state;
     }
