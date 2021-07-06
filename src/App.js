@@ -2,7 +2,7 @@ import React, { useReducer, useEffect } from 'react'
 import Header from './components/Header'
 import MovieList from './components/MovieList'
 import LikeMovies from './components/LikeMovies'
-
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Search from './components/Search'
 import { initialState, reducer } from './hooks/reducer'
 import './App.css';
@@ -43,12 +43,18 @@ const App =()=> {
 
     }))
   }
+
+  const saveTolocalStorage =(items) =>{
+    localStorage.setItem('movie-app-favorites', JSON.stringify(items));
+  }
+
   
   const addLikeMovies =(movie)=>{
    dispatch({
        type: "ADD_TO_FAVORITES",
-       value: [movie]
+       value: [...like, movie]
    })
+  saveTolocalStorage(like)
   }
 
   const removeFavorites = (id) =>{
@@ -61,21 +67,28 @@ const App =()=> {
  
 console.log("fghj", movies)
 console.log("likes", like)
+saveTolocalStorage(like)
+
 return (
-  
+  <Router>
     <div className="container">
       <Header title="Movie app" />
 <main>
       <Search search={search} />
 
       <p className="App-intro">Sharing a few of our favourite movies</p>
-
+    <Switch>
+      <Route exact path="/">
      <MovieList loading={loading} movies={movies} addLikeMovies={addLikeMovies}/>
      <LikeMovies like={like} removeFavorites={removeFavorites}/>
+     </Route>
 
+     <Route path="/favorite">
+     </Route>
+     </Switch>
      </main>
     </div>
-
+    </Router>
 );
 };
 
