@@ -1,4 +1,5 @@
 import React from 'react'
+import './Favorites.css'
 
 const Favorite = ({likes}) =>{
     console.log("aSDF", likes)
@@ -10,7 +11,7 @@ const Favorite = ({likes}) =>{
           <h4>{likes.Title}</h4>
           {likes.id}
           <img 
-          className="movie__img"
+          className="favorite__img"
           src={likes.Poster}
           />
           
