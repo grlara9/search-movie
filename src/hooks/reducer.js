@@ -33,7 +33,8 @@ export const initialState ={
                 case "ADD_TO_FAVORITES":
                     return{
                         ...state,
-                        like: action.value
+                        like: action.value,
+                        
                     }; 
                     
                     case "REMOVE_FROM_FAVORITES":

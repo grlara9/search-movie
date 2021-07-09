@@ -50,11 +50,12 @@ const App =()=> {
 
   
   const addLikeMovies =(movie)=>{
+   
    dispatch({
        type: "ADD_TO_FAVORITES",
        value: [...like, movie]
    })
-  saveTolocalStorage(like)
+ 
   }
 
   const removeFavorites = (id) =>{
@@ -63,12 +64,31 @@ const App =()=> {
       value: id
     })
   }
+
+  
+
   const { movies, errorMessage, loading, like } = state;
- 
-console.log("fghj", movies)
-console.log("likes", like)
+  
+  
+  console.log("fghj", movies)
+  console.log("likes", like)
 saveTolocalStorage(like)
 
+
+useEffect(() => {
+  const movieFavorites = JSON.parse(
+    localStorage.getItem('movie-app-favorites')
+  );
+
+  if (movieFavorites) {
+    //setFavourites(movieFavourites);
+    dispatch({
+      type: "ADD_TO_FAVORITES",
+      value: [ movieFavorites]
+  })
+
+  }
+}, []);
 return (
   <Router>
     <div className="container">

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Favorites.css'
 
-const Favorite = ({likes}) =>{
+const Favorite = ({likes, handleRemoveClick}) =>{
     console.log("aSDF", likes)
     return(
         <>
@@ -15,6 +15,9 @@ const Favorite = ({likes}) =>{
           src={likes.Poster}
           />
           
+          <div className="overlay" onClick={()=>handleRemoveClick(likes)} >
+           
+          </div>
           
         </div>
       

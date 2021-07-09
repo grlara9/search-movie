@@ -2,7 +2,7 @@ import React from 'react'
 import Favorites from './Favorites'
 import Spinner from './Spinner';
 
-const LikeMovies = ({like, loading , errorMsj}) =>{
+const LikeMovies = ({like, loading , errorMsj,  removeFavorites }) =>{
 
    
     return loading && !errorMsj ?  (
@@ -12,7 +12,7 @@ const LikeMovies = ({like, loading , errorMsj}) =>{
       ): (
         <section className="movies">
           {like.map((likes)=>(
-                <Favorites likes={likes} />
+                <Favorites likes={likes} handleRemoveClick={removeFavorites} /> 
           ))}
         </section>
       )
