@@ -59,6 +59,7 @@ const App =()=> {
   }
 
   const removeFavorites = (id) =>{
+    console.log("id remove", id)
     dispatch({
       type:"REMOVE_FROM_FAVORITES",
       value: id
@@ -75,20 +76,7 @@ const App =()=> {
 saveTolocalStorage(like)
 
 
-useEffect(() => {
-  const movieFavorites = JSON.parse(
-    localStorage.getItem('movie-app-favorites')
-  );
 
-  if (movieFavorites) {
-    //setFavourites(movieFavourites);
-    dispatch({
-      type: "ADD_TO_FAVORITES",
-      value: [ movieFavorites]
-  })
-
-  }
-}, []);
 return (
   <Router>
     <div className="container">
@@ -100,7 +88,7 @@ return (
     <Switch>
       <Route exact path="/">
      <MovieList loading={loading} movies={movies} addLikeMovies={addLikeMovies}/>
-     <LikeMovies like={like} removeFavorites={removeFavorites}/>
+     <LikeMovies like={like} removeFavorites={removeFavorites} />
      </Route>
 
      <Route path="/favorite">
