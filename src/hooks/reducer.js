@@ -38,8 +38,10 @@ export const initialState ={
                     }; 
                     
                     case "REMOVE_FROM_FAVORITES":
-                       return state.filter(favorite => favorite.imdbID !== action.imdbID)
-                      
+                       const favorite=  like.filter(favorite => favorite.imdbID !== action.imdbID)
+                       return{
+                           like: favorite
+                       }
                        
                         
                     default:

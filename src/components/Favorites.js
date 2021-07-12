@@ -8,8 +8,9 @@ const Favorite = ({likes, handleRemoveClick}) =>{
       <div className="favorite__list">
        
           <div className="favorite">
+           {likes.imdbID}
           <h4>{likes.Title}</h4>
-          {likes.id}
+          
           <img 
           className="favorite__img"
           src={likes.Poster}

@@ -12,7 +12,7 @@ const LikeMovies = ({like, loading , errorMsj,  removeFavorites }) =>{
       ): (
         <section className="movies">
           {like.map((likes)=>(
-                <Favorites likes={likes} handleRemoveClick={removeFavorites} /> 
+                <Favorites  likes={likes} handleRemoveClick={removeFavorites} /> 
           ))}
         </section>
       )

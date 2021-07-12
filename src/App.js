@@ -58,11 +58,11 @@ const App =()=> {
  
   }
 
-  const removeFavorites = (id) =>{
-    console.log("id remove", id)
+  const removeFavorites = (imdbID) =>{
+    console.log("id remove", imdbID)
     dispatch({
       type:"REMOVE_FROM_FAVORITES",
-      value: id
+      value: imdbID
     })
   }
 
