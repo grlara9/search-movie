@@ -9,7 +9,13 @@ export const initialState ={
 
  export const reducer = (state, action) =>{
      console.log(action)
+
     switch (action.type){
+
+        case 'REMOVE_FROM_FAVORITES':
+            return state.like.filter((favorite) => favorite.imdbID !== action.imdbID)
+            
+             
         case "SEARCH_MOVIE_REQUEST":
             return{
                 ...state,
@@ -37,12 +43,7 @@ export const initialState ={
                         
                     }; 
                     
-                    case "REMOVE_FROM_FAVORITES":
-                       const favorite=  like.filter(favorite => favorite.imdbID !== action.imdbID)
-                       return{
-                           like: favorite
-                       }
-                       
+       
                         
                     default:
                         return state;
