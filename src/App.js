@@ -38,10 +38,7 @@ const App =()=> {
       console.log("Error: ", err)
   })
   }
-  const saveTolocalStorage =(items) =>{
-    localStorage.setItem('movie-app-favorites', JSON.stringify(items));
-  }
-
+ 
   
   const addLikeMovies =(movie)=>{
     const newFavoriteList = [...favorites, movie];
@@ -51,7 +48,13 @@ const App =()=> {
   }
 
   
+  const removeFavoriteMovie = (movie) => {
+		const newFavoriteList = favorites.filter(
+			(favorite) => favorite.imdbID !== movie.imdbID
+		);
 
+		setFavorites(newFavoriteList);
+    }
   
 
   
@@ -74,7 +77,7 @@ return (
     <Switch>
       <Route exact path="/">
      <MovieList  movies={movies} addLikeMovies={addLikeMovies}/>
-     <LikeMovies favorite={Favorite}  />
+     <LikeMovies favorite={Favorite} removeFavoriteMovie={removeFavoriteMovie} />
      </Route>
 
      <Route path="/favorite">
