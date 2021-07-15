@@ -16,7 +16,7 @@ const Favorite = ({likes, handleRemoveClick}) =>{
           src={likes.Poster}
           />
           
-          <div className="overlay" onClick={()=>handleRemoveClick(likes.imdbID)} >
+          <div className="overlay" onClick={()=>handleRemoveClick(likes)} >
            
           </div>
           

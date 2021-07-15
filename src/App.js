@@ -61,7 +61,7 @@ const App =()=> {
   
   
   console.log("fghj", movies)
-  
+  console.log("favorite click", favorites)
 
 
 
@@ -77,7 +77,7 @@ return (
     <Switch>
       <Route exact path="/">
      <MovieList  movies={movies} addLikeMovies={addLikeMovies}/>
-     <LikeMovies favorite={Favorite} removeFavoriteMovie={removeFavoriteMovie} />
+     <LikeMovies favorites={favorites} removeFavoriteMovie={removeFavoriteMovie} />
      </Route>
 
      <Route path="/favorite">
