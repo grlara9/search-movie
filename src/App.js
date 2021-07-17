@@ -32,9 +32,11 @@ const App =()=> {
   },[])
 
   const search = input =>{
+    setIsLoading(true)
     axios.get(`https://www.omdbapi.com/?s=${input}&apikey=709d62e0`)
     .then(promise=>{
       setMovies(promise.data.Search)
+      setIsLoading(false)
     })
     .catch(err =>{
       console.log("Error: ", err)
