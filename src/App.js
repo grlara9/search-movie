@@ -14,14 +14,16 @@ const MOVIE_URl = "https://www.omdbapi.com/?s=man&apikey=709d62e0";
 const App =()=> {
   const [movies, setMovies] = useState([]);
 	const [favorites, setFavorites] = useState([]);
-	
+	const [isLoading, setIsLoading] = useState(true)
  // const [state, dispatch] = useReducer(reducer, initialState)
 
   useEffect(()=>{
+    setIsLoading(true)
     axios.get(MOVIE_URl)
     .then(promise => {
       console.log("promise", promise)
        setMovies(promise.data.Search)
+       setIsLoading(false)
         })
     .catch(err =>{
       console.log("Error: ", err)
@@ -76,7 +78,7 @@ return (
       <p className="App-intro">Sharing a few of our favourite movies</p>
     <Switch>
       <Route exact path="/">
-     <MovieList  movies={movies} addLikeMovies={addLikeMovies}/>
+     <MovieList  movies={movies} addLikeMovies={addLikeMovies} isLoading={isLoading}/>
      <LikeMovies favorites={favorites} removeFavoriteMovie={removeFavoriteMovie} />
      </Route>
 
