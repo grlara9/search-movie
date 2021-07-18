@@ -1,7 +1,7 @@
 import React from 'react'
 
 const AddLike = () =>{
-    return(
+    return( 
         <>
         <span>Like </span>
         <svg xmlns="http://www.w3.org/2000/svg" 
