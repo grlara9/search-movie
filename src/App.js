@@ -65,16 +65,6 @@ const App =()=> {
 
 		setFavorites(newFavoriteList);
     }
-  
-
-  
-  
-  
-  console.log("fghj", movies)
-  console.log("favorite click", favorites)
-
-
-
 
 return (
   <Router>
@@ -83,7 +73,6 @@ return (
 <main>
       <Search search={search} />
 
-      <p className="App-intro">Sharing a few of our favourite movies</p>
     <Switch>
       <Route exact path="/">
      <MovieList  movies={movies} addLikeMovies={addLikeMovies} isLoading={isLoading}/>
