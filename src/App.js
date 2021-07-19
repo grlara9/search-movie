@@ -17,6 +17,11 @@ const App =()=> {
 	const [isLoading, setIsLoading] = useState(true)
  // const [state, dispatch] = useReducer(reducer, initialState)
 
+
+ const saveToLocalStorage = (items) => {
+  localStorage.setItem('react-movie-app-favourites', JSON.stringify(items));
+};
+
   useEffect(()=>{
     setIsLoading(true)
     axios.get(MOVIE_URl)
@@ -47,6 +52,7 @@ const App =()=> {
   const addLikeMovies =(movie)=>{
     const newFavoriteList = [...favorites, movie];
 		setFavorites(newFavoriteList);
+    saveToLocalStorage(newFavoriteList)
   
  
   }
@@ -81,10 +87,10 @@ return (
     <Switch>
       <Route exact path="/">
      <MovieList  movies={movies} addLikeMovies={addLikeMovies} isLoading={isLoading}/>
-     <LikeMovies favorites={favorites} removeFavoriteMovie={removeFavoriteMovie} />
      </Route>
 
      <Route path="/favorite">
+     <LikeMovies favorites={favorites} removeFavoriteMovie={removeFavoriteMovie} />
      </Route>
      </Switch>
      </main>
