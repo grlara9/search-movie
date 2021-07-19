@@ -7,12 +7,13 @@
     box-shadow: 5px 5px 32px 5px rgba(0,0,0,0.43);
 }
 
-.favorite{ 
+.favorite{
     margin: 30px 0 20px 20px;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 5px; 
     
 	transition: .3s ease;
+    
 }
 
 .favorite__img{
@@ -20,10 +21,7 @@
     height: 450px;
 }
 
-.favorite__img:hover{
-    cursor: pointer;
-    transform: scale(1.1); 
-}
+
 
 .favorite:hover{
     cursor: pointer;
@@ -31,11 +29,13 @@
 
 }
 
+.favorite:hover img{
+    opacity: 0.3;
+}
+
 .favorite:hover .overlay{
     opacity: 1;
 }
-
-
 
 
 .overlay{
@@ -53,3 +53,4 @@
 	
     
 }
+

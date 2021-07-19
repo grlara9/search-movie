@@ -1,5 +1,6 @@
 import React from 'react'
 import Favorites from './Favorites'
+import RemoveLike from './RemoveLike'
 import Spinner from './Spinner';
 
 const LikeMovies = ({favorites, loading , errorMsj,  removeFavoriteMovie }) =>{
@@ -12,7 +13,7 @@ const LikeMovies = ({favorites, loading , errorMsj,  removeFavoriteMovie }) =>{
       ): (
         <section className="movies">
           {favorites.map((likes)=>(
-                <Favorites  likes={likes} handleRemoveClick={removeFavoriteMovie} /> 
+                <Favorites  likes={likes} handleRemoveClick={removeFavoriteMovie} RemoveLike={RemoveLike}/> 
           ))}
         </section>
       )
