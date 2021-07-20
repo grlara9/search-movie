@@ -47,6 +47,15 @@ const App =()=> {
       console.log("Error: ", err)
   })
   }
+
+  useEffect(() => {
+		const movieFavorites = JSON.parse(
+			localStorage.getItem('react-movie-app-favourites')
+		);
+
+		setFavorites(movieFavorites);
+	}, []);
+
  
   
   const addLikeMovies =(movie)=>{
@@ -79,7 +88,7 @@ return (
      </Route>
 
      <Route path="/favorite">
-     <LikeMovies favorites={favorites} removeFavoriteMovie={removeFavoriteMovie} />
+        <LikeMovies favorites={favorites} removeFavoriteMovie={removeFavoriteMovie} />
      </Route>
      </Switch>
      </main>
