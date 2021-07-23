@@ -1,9 +1,10 @@
 .movie__header{
     background-color: red;
     color:white;
-    height: 70px;
+    height: 80px;
     width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     position: fixed;
     top: 0;
@@ -15,17 +16,24 @@ main{
 }
 
 .nav-links{
-    list-style: none;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
     align-items: center;
-    width: 100%;
-    height: 100;
-    padding: 1rem 1rem 0 0;
+    list-style: none;
+    padding: auto 18px;
+    margin-right: 12px;
+    font-weight: bold;
    
 }
+.nav-link{
+text-decoration: none;
+color: #ffffff;
+transition: 0.3s all;
 
+}
+
+.nav-link:hover {
+	color: black;
+}
 .nav-links li{
     margin: 1rem;
 }
