@@ -8,7 +8,7 @@ import Search from './components/Search'
 import './App.css';
 import axios from 'axios'
 import Favorite from './components/Favorites'
-const MOVIE_URl = "https://www.omdbapi.com/?s=avengers&apikey=709d62e0";
+const MOVIE_URl = "https://cors-anywhere.herokuapp.com/https://www.omdbapi.com/?s=avengers&apikey=709d62e0";
 
 
 const App =()=> {
@@ -38,7 +38,7 @@ const App =()=> {
 
   const search = input =>{
     setIsLoading(true)
-    axios.get(`https://www.omdbapi.com/?s=${input}&apikey=709d62e0`)
+    axios.get(`https://cors-anywhere.herokuapp.com/https://www.omdbapi.com/?s=${input}&apikey=709d62e0`)
     .then(promise=>{
      
       setMovies(promise.data.Search)
