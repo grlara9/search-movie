@@ -1,7 +1,7 @@
 .movie__header{
     background-color: red;
     color:white;
-    height: 80px;
+    height: 70px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -23,6 +23,9 @@ main{
     margin-right: 12px;
     font-weight: bold;
    
+}
+h2{
+    text-decoration: none;
 }
 .nav-link{
 text-decoration: none;

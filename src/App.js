@@ -8,7 +8,7 @@ import Search from './components/Search'
 import './App.css';
 import axios from 'axios'
 import Favorite from './components/Favorites'
-const MOVIE_URl = "https://www.omdbapi.com/?s=man&apikey=709d62e0";
+const MOVIE_URl = "https://www.omdbapi.com/?s=avengers&apikey=709d62e0";
 
 
 const App =()=> {
@@ -87,7 +87,7 @@ return (
      <MovieList  movies={movies} addLikeMovies={addLikeMovies} isLoading={isLoading}/>
      </Route>
 
-     <Route path="/favorite">
+     <Route path="/favorites">
         <LikeMovies favorites={favorites} removeFavoriteMovie={removeFavoriteMovie} />
      </Route>
      </Switch>
