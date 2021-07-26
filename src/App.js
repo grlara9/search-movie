@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Header from './components/Header'
+import Navigation from './components/Navigation'
 import MovieList from './components/MovieList'
 import LikeMovies from './components/LikeMovies'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -40,6 +40,7 @@ const App =()=> {
     setIsLoading(true)
     axios.get(`https://www.omdbapi.com/?s=${input}&apikey=709d62e0`)
     .then(promise=>{
+     
       setMovies(promise.data.Search)
       setIsLoading(false)
     })
@@ -78,7 +79,7 @@ const App =()=> {
 return (
   <Router>
     <div className="container">
-      <Header title="Movie app" />
+      <Navigation />
 <main>
       <Search search={search} />
 

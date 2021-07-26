@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import {FiMenu, FiX} from 'react-icons/fi'
-import './Header.css'
+import Header from './Header'
+import './Navigation.css'
 
-const Navigation =()=>{
+const Navigation =(props)=>{
 
     const [open, setOpen] = useState(false)
 
@@ -16,12 +17,14 @@ const Navigation =()=>{
 	};
 
     return(
+        <Header>
+          <Link to="/" className="nav-logo" onClick={() => setOpen(false)}>
+                <h2>Movie App</h2> 
+            </Link>
 
-        <nav className="navbar">
             <div onClick={handleClick} className="nav-icon">
 				{open ? <FiX /> : <FiMenu />}
 			</div>
-
             <ul className={open ? 'nav-links active' : 'nav-links'}>
                 <li className="nav-item">
                     <Link to="/" className="nav-link" onClick={closeMenu}>
@@ -37,7 +40,8 @@ const Navigation =()=>{
                     
                 </li>
             </ul>
-        </nav>
+         </Header>
+       
     )
 }
 
