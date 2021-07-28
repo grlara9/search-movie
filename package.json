@@ -1,6 +1,6 @@
 {
   "name": "search-movie",
-  "homepage":"http://grlara9.github.io/search-movie/",
+  "homepage":"https://grlara9.github.io/search-movie/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
