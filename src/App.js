@@ -7,8 +7,7 @@ import Search from './components/Search'
 //import { initialState, reducer } from './hooks/reducer'
 import './App.css';
 import axios from 'axios'
-import Favorite from './components/Favorites'
-const MOVIE_URl = "https://cors-anywhere.herokuapp.com/https://www.omdbapi.com/?s=avengers&apikey=709d62e0";
+const MOVIE_URl = "https://www.omdbapi.com/?s=avengers&apikey=709d62e0";
 
 
 const App =()=> {
@@ -26,6 +25,7 @@ const App =()=> {
     setIsLoading(true)
     axios.get(MOVIE_URl)
     .then(promise => {
+      
       console.log("promise", promise)
        setMovies(promise.data.Search)
        setIsLoading(false)
@@ -37,8 +37,8 @@ const App =()=> {
   },[])
 
   const search = input =>{
-    setIsLoading(true)
-    axios.get(`https://cors-anywhere.herokuapp.com/https://www.omdbapi.com/?s=${input}&apikey=709d62e0`)
+    setIsLoading(true) 
+    axios.get(`https://www.omdbapi.com/?s=${input}&apikey=709d62e0`)
     .then(promise=>{
      
       setMovies(promise.data.Search)
