@@ -77,8 +77,8 @@ const App =()=> {
     }
 
 return (
-  <Router>
-    <div className="container">
+  <div className="container">
+      <Router>
       <Navigation />
 <main>
       <Search search={search} />
@@ -93,8 +93,8 @@ return (
      </Route>
      </Switch>
      </main>
-    </div>
     </Router>
+    </div>
 );
 };
 
