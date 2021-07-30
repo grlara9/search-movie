@@ -7,14 +7,14 @@ import Search from './components/Search'
 //import { initialState, reducer } from './hooks/reducer'
 import './App.css';
 import axios from 'axios'
-const MOVIE_URl = "https://www.omdbapi.com/?s=avenrs&apikey=709d62e0";
+const MOVIE_URl = "https://www.omdbapi.com/?s=avenger&apikey=709d62e0";
 
 
 const App =()=> {
   const [movies, setMovies] = useState([]);
 	const [favorites, setFavorites] = useState([]);
 	const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState("")
+  
  // const [state, dispatch] = useReducer(reducer, initialState)
 
 
@@ -26,20 +26,12 @@ const App =()=> {
     setIsLoading(true)
     axios.get(MOVIE_URl)
     .then(promise => {
-      
       console.log("promise", promise)
        setMovies(promise.data.Search)
        setIsLoading(false)
-        },
-        (error) =>{
-          setIsLoading(false)
-          setError(error)
         }
-        
-        )
-   
-    
-  },[])
+      )
+   },[])
 
   const search = input =>{
     setIsLoading(true) 
@@ -80,7 +72,7 @@ const App =()=> {
 
 		setFavorites(newFavoriteList);
     }
-console.log("el error es", error)
+
 return (
   <div className="container">
       <Router>
@@ -90,7 +82,7 @@ return (
 
     <Switch>
       <Route exact path="/">
-        <MovieList  movies={movies} addLikeMovies={addLikeMovies} isLoading={isLoading} error={error}/>
+        <MovieList  movies={movies} addLikeMovies={addLikeMovies} isLoading={isLoading} />
      </Route>
 
      <Route path="/favorites">
