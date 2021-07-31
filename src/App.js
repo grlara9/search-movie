@@ -86,7 +86,7 @@ return (
      </Route>
 
      <Route path="/favorites">
-        <LikeMovies favorites={favorites} removeFavoriteMovie={removeFavoriteMovie} />
+        <LikeMovies favorites={favorites} removeFavoriteMovie={removeFavoriteMovie} isLoading={isLoading}/>
      </Route>
      </Switch>
      </main>
