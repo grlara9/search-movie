@@ -81,11 +81,11 @@ return (
       <Search search={search} />
 
     <Switch>
-      <Route exact path="/">
+      <Route exact path="/favorites">
         <MovieList  movies={movies} addLikeMovies={addLikeMovies} isLoading={isLoading} />
      </Route>
 
-     <Route path="/favorites">
+     <Route path="/">
         <LikeMovies favorites={favorites} removeFavoriteMovie={removeFavoriteMovie} isLoading={isLoading}/>
      </Route>
      </Switch>
