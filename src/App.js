@@ -84,13 +84,15 @@ return (
     
 
     <Switch>
-      <Route path="/">
-        <Search search={search} />
-        <MovieList  movies={movies} addLikeMovies={addLikeMovies} isLoading={isLoading} />
-     </Route>
+      
 
      <Route path="/favorites">
         <LikeMovies favorites={favorites} removeFavoriteMovie={removeFavoriteMovie} isLoading={isLoading}/>
+     </Route>
+
+     <Route path="/">
+        <Search search={search} />
+        <MovieList  movies={movies} addLikeMovies={addLikeMovies} isLoading={isLoading} />
      </Route>
      </Switch>
      </main>
