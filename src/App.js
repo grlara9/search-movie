@@ -18,9 +18,7 @@ const App =()=> {
  // const [state, dispatch] = useReducer(reducer, initialState)
 
 
- const saveToLocalStorage = (items) => {
-  localStorage.setItem('react-movie-app-favourites', JSON.stringify(items));
-};
+ 
 
   useEffect(()=>{
     setIsLoading(true)
@@ -46,23 +44,28 @@ const App =()=> {
   })
   }
 
-  useEffect(() => {
-		const movieFavorites = JSON.parse(
-			localStorage.getItem('react-movie-app-favourites') || []
-		);
-
-		setFavorites(movieFavorites);
-	}, []);
-
- 
-  
   const addLikeMovies =(movie)=>{
     const newFavoriteList = [...favorites, movie];
+    
 		setFavorites(newFavoriteList);
+
     saveToLocalStorage(newFavoriteList)
   
  
   }
+
+  const saveToLocalStorage = (items) => {
+    localStorage.setItem('react-movie-app-favourites', JSON.stringify(items));
+  };
+
+  useEffect(() => {
+	
+    const json = localStorage.getItem('react-movie-app-favourites');
+    const movieFavorites = JSON.parse(json) || []; // set default value here
+
+
+		setFavorites(movieFavorites);
+	}, []);
 
   
   const removeFavoriteMovie = (movie) => {
@@ -78,10 +81,11 @@ return (
       <Router>
       <Navigation />
 <main>
-      <Search search={search} />
+    
 
     <Switch>
       <Route exact path="/favorites">
+        <Search search={search} />
         <MovieList  movies={movies} addLikeMovies={addLikeMovies} isLoading={isLoading} />
      </Route>
 
