@@ -21,14 +21,19 @@ const App =()=> {
  
 
   useEffect(()=>{
+    const fetchItems = async () => {
     setIsLoading(true)
-    axios.get(MOVIE_URl)
-    .then(promise => {
+
+    const promise =  await axios.get(MOVIE_URl)
+    
+    
       console.log("promise", promise)
+      
        setMovies(promise.data.Search)
        setIsLoading(false)
-        }
-      )
+       
+    }
+    fetchItems()  
    },[])
 
   const search = input =>{

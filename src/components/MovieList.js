@@ -11,7 +11,7 @@ const MovieList = ({movies, isLoading , addLikeMovies}) => {
   ) :(
     <section className="movies">
       {movies.map((movie)=>(
-        <Movies key={movie.id} movie={movie} handleLikeClick={addLikeMovies} AddLike={AddLike}/>
+        <Movies key={movie.imdbID} movie={movie} handleLikeClick={addLikeMovies} AddLike={AddLike}/>
       ))}
     </section>
   )
