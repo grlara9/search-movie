@@ -36,7 +36,12 @@ const App =()=> {
     fetchItems()  
    },[])
 
-  const search = input =>{
+   useEffect(()=>{
+      
+      search();
+   },[])
+
+   const search = async (input) =>{
     setIsLoading(true) 
     axios.get(`https://www.omdbapi.com/?s=${input}&apikey=709d62e0`)
     .then(promise=>{
@@ -48,6 +53,7 @@ const App =()=> {
       console.log("Error: ", err)
   })
   }
+  
 
   const addLikeMovies =(movie)=>{
     const newFavoriteList = [...favorites, movie];
