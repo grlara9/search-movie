@@ -1,5 +1,5 @@
 import React from 'react'
-import Spinner from './Spinner'
+import Spinner from 'react-bootstrap/Spinner'
 import Movies from './Movies'
 import  AddLike from './AddLike'
 import './MovieList.css'
@@ -7,7 +7,7 @@ import './MovieList.css'
 const MovieList = ({movies, isLoading , addLikeMovies}) => {
  
   return isLoading ? (
-  <Spinner />
+    <Spinner animation="border" variant="light" style={{ margin:'auto', display:'block', marginTop:'12px'}} />
   ) :(
     <section className="movies">
       {movies.map((movie)=>(
@@ -15,8 +15,6 @@ const MovieList = ({movies, isLoading , addLikeMovies}) => {
       ))}
     </section>
   )
-   
-  
 };
 
 

@@ -1,13 +1,14 @@
 import React from 'react'
 import Favorites from './Favorites'
 import RemoveLike from './RemoveLike'
-import Spinner from './Spinner';
+import Spinner from 'react-bootstrap/Spinner'
+
 
 const LikeMovies = ({favorites, isLoading, removeFavoriteMovie }) =>{
 
    
     return isLoading  ?  (
-        <Spinner />
+      <Spinner animation="border" variant="light" style={{ margin:'auto', display:'block', marginTop:'12px'}} />
       ):(
         <section className="movies">
           {favorites.map((likes)=>(
