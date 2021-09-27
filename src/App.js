@@ -14,30 +14,29 @@ const App =()=> {
   const [movies, setMovies] = useState([]);
 	const [favorites, setFavorites] = useState([]);
 	const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState(null)
   
- // const [state, dispatch] = useReducer(reducer, initialState)
-
-
- 
-
   useEffect(()=>{
-    const fetchItems = async () => {
-    setIsLoading(true)
-
-    const promise =  await axios.get(MOVIE_URl)
-    
-    
-      console.log("promise", promise)
-      
-       setMovies(promise.data.Search)
-       setIsLoading(false)
-       
-    }
+   
     fetchItems()  
    },[])
 
+
+   const fetchItems = async () => {
+    setIsLoading(true)
+    const promise =  await axios.get(MOVIE_URl)
+    .then(promise =>{
+      console.log("promise", promise)
+      setMovies(promise.data.Search)
+      setIsLoading(false)
+    })
+    .catch(err =>{
+        setError(err)
+        console.log("Error: ", err)
+    })
+    }
+
    useEffect(()=>{
-      
       search();
    },[])
 
@@ -50,6 +49,7 @@ const App =()=> {
       setIsLoading(false)
     })
     .catch(err =>{
+      setError(err)
       console.log("Error: ", err)
   })
   }
@@ -103,7 +103,7 @@ return (
 
      <Route path="/">
         <Search search={search} />
-        <MovieList  movies={movies} addLikeMovies={addLikeMovies} isLoading={isLoading} />
+        <MovieList  movies={movies} addLikeMovies={addLikeMovies} isLoading={isLoading} error={error} />
      </Route>
      </Switch>
      </main>
