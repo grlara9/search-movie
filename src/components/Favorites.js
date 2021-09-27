@@ -8,30 +8,21 @@ const DEFAULT_PLACEHOLDER_IMAGE =
 const Favorite = ({likes, handleRemoveClick, RemoveLike}) =>{
   const poster =
   likes.Poster === "N/A" ? DEFAULT_PLACEHOLDER_IMAGE : likes.Poster;
-
-    console.log("aSDF", likes)
     return(
-        <>
+      <>
       <div className="favorite__list">
-       
-          <div className="favorite">
-          
+        <div className="favorite">
           <h4>{likes.Title}</h4>
-          
           <img 
-          className="favorite__img"
-          src={poster}
+            className="favorite__img"
+            src={poster}
           />
-           <div className="overlay" onClick={()=>handleRemoveClick(likes)} >
+          <div className="overlay" onClick={()=>handleRemoveClick(likes)} >
             <RemoveLike />
           </div>
-          
         </div>
-      
-     
-    </div>
-  </>
-    )
+      </div>
+    </>
+  )
 }
-
 export default Favorite

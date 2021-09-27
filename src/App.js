@@ -4,7 +4,6 @@ import MovieList from './components/MovieList'
 import LikeMovies from './components/LikeMovies'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Search from './components/Search'
-//import { initialState, reducer } from './hooks/reducer'
 import './App.css';
 import axios from 'axios'
 const MOVIE_URl = "https://www.omdbapi.com/?s=avenger&apikey=709d62e0";
@@ -92,18 +91,13 @@ return (
       <Router>
       <Navigation />
 <main>
-    
-
-    <Switch>
-      
-
-     <Route path="/favorites">
-        <LikeMovies favorites={favorites} removeFavoriteMovie={removeFavoriteMovie} isLoading={isLoading}/>
-     </Route>
-
-     <Route path="/">
-        <Search search={search} />
-        <MovieList  movies={movies} addLikeMovies={addLikeMovies} isLoading={isLoading} error={error} />
+  <Switch>
+    <Route path="/favorites">
+      <LikeMovies favorites={favorites} removeFavoriteMovie={removeFavoriteMovie} isLoading={isLoading}/>
+    </Route>
+    <Route path="/">
+      <Search search={search} />
+      <MovieList  movies={movies} addLikeMovies={addLikeMovies} isLoading={isLoading} error={error} />
      </Route>
      </Switch>
      </main>
