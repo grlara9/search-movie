@@ -26,19 +26,13 @@ const App =()=> {
       setMovies(promise.data.Search)
       setIsLoading(false)
     }
-
+    
     const search = async (input) =>{
       setIsLoading(true) 
-      axios.get(`https://www.omdbapi.com/?s=${input}&apikey=709d62e0`)
-      .then(promise=>{
-       
-        setMovies(promise.data.Search)
+     const res = await axios.get(`https://www.omdbapi.com/s=${input}&apikey:709d62e0`)
+      setMovies(res.data.Search)
         setIsLoading(false)
-      })
-      .catch(err =>{
-        setError(err)
-        console.log("Error: ", err)
-    })
+     
     }
 
   useEffect(()=>{
