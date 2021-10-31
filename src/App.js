@@ -6,8 +6,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Search from './components/Search'
 import './App.css';
 import axios from 'axios'
-const MOVIE_URl = "https://www.omdbapi.com/";
-
+const MOVIE_URl = "https://www.omdbapi.com/?";
+const KEY= "709d62e0"
 
 const App =()=> {
   const [movies, setMovies] = useState([]);
@@ -18,10 +18,7 @@ const App =()=> {
    const fetchItems = async () => {
     setIsLoading(true)
     const promise =  await axios.get(MOVIE_URl,{
-      params: {
-        apikey: "709d62e0",
-        s: 'avengers'
-      }
+      params: {apikey: KEY, s: 'avenger'}
     })
       setMovies(promise.data.Search)
       setIsLoading(false)
@@ -29,7 +26,7 @@ const App =()=> {
     
     const search = async (input) =>{
       setIsLoading(true) 
-     const res = await axios.get(`https://www.omdbapi.com/s=${input}&apikey:709d62e0`)
+     const res = await axios.get(`https://www.omdbapi.com/?s=${input}&apikey=${KEY}`)
       setMovies(res.data.Search)
         setIsLoading(false)
      
