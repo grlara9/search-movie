@@ -16,6 +16,6 @@ const MovieList = ({movies, isLoading , addLikeMovies}) => {
     </section>
   )
 };
-
+ 
 
 export default MovieList

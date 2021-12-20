@@ -4,6 +4,8 @@ import MovieList from './components/MovieList'
 import LikeMovies from './components/LikeMovies'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Search from './components/Search'
+import  AddLike from './components/AddLike'
+import RemoveLike from './components/RemoveLike'
 import './App.css';
 import axios from 'axios'
 const MOVIE_URl = "https://www.omdbapi.com/?";
@@ -43,15 +45,7 @@ const App =()=> {
    
   
 
-  const addLikeMovies =(movie)=>{
-    const newFavoriteList = [...favorites, movie];
-    
-		setFavorites(newFavoriteList);
-
-    saveToLocalStorage(newFavoriteList)
-  
  
-  }
 
   const saveToLocalStorage = (items) => {
     localStorage.setItem('react-movie-app-favourites', JSON.stringify(items));
@@ -66,13 +60,21 @@ const App =()=> {
 		setFavorites(movieFavorites);
 	}, []);
 
+  const addLikeMovies =(movie)=>{
+    const newFavoriteList = [...favorites, movie];
+    
+		setFavorites(newFavoriteList);
+
+    saveToLocalStorage(newFavoriteList)
+  
+ 
+  }
   
   const removeFavoriteMovie = (movie) => {
 		const newFavoriteList = favorites.filter(
 			(favorite) => favorite.imdbID !== movie.imdbID
-		);
-
-		setFavorites(newFavoriteList);
+		  );
+      setFavorites(newFavoriteList);
     }
 
 return (
@@ -82,11 +84,11 @@ return (
 <main>
   <Switch>
     <Route path="/favorites">
-      <LikeMovies favorites={favorites} removeFavoriteMovie={removeFavoriteMovie} isLoading={isLoading}/>
+      <MovieList movies={favorites} handleFavoriteClick={removeFavoriteMovie} isLoading={isLoading} favouriteComponent={AddLike}/>
     </Route>
     <Route path="/">
       <Search search={search} />
-      <MovieList  movies={movies} addLikeMovies={addLikeMovies} isLoading={isLoading} error={error} />
+      <MovieList movies={movies} handleFavoriteClick={addLikeMovies} isLoading={isLoading} favouriteComponent={RemoveLike} />
      </Route>
      </Switch>
      </main>

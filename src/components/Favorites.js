@@ -1,5 +1,4 @@
 import React from 'react'
-
 import './Favorites.css'
 
 const DEFAULT_PLACEHOLDER_IMAGE =
@@ -12,7 +11,7 @@ const Favorite = ({likes, handleRemoveClick, RemoveLike}) =>{
       <>
       <div className="favorite__list">
         <div className="favorite">
-          <h4>{likes.Title}</h4>
+          <h4>{likes.Title}</h4> 
           <img 
             className="favorite__img"
             src={poster}
@@ -20,7 +19,7 @@ const Favorite = ({likes, handleRemoveClick, RemoveLike}) =>{
           <div className="overlay" onClick={()=>handleRemoveClick(likes)} >
             <RemoveLike />
           </div>
-        </div>
+        </div> 
       </div>
     </>
   )

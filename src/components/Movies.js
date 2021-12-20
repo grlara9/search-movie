@@ -12,19 +12,17 @@ const Movies =({movie, handleLikeClick, AddLike})=>{
    return(
      <>
       <div className="movie__list">
-       
-          <div className="movie">
-          <h4>{movie.Title}</h4>
-          {movie.id}
-          <img 
-          className="movie__img"
-          src={poster}
-          />
-          
-          <div className="overlay" onClick={()=>handleLikeClick(movie)} >
+       <div className="movie">
+        <h4>{movie.Title}</h4>
+        {movie.id}
+        <img 
+        className="movie__img"
+        src={poster}
+        />
+        <div className="overlay" onClick={()=>handleLikeClick(movie)} >
             <AddLike />
           </div>
-        </div>
+        </div> 
       
      
     </div>
