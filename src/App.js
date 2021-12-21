@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Navigation from './components/Navigation'
 import MovieList from './components/MovieList'
 import LikeMovies from './components/LikeMovies'
+import Movies from './components/Movies'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Search from './components/Search'
 import  AddLike from './components/AddLike'
@@ -84,11 +85,11 @@ return (
 <main>
   <Switch>
     <Route path="/favorites">
-      <MovieList movies={favorites} handleFavoriteClick={removeFavoriteMovie} isLoading={isLoading} favouriteComponent={AddLike}/>
+      <Movies movies={favorites} handleFavoriteClick={removeFavoriteMovie} isLoading={isLoading} favoriteComponent={AddLike}/>
     </Route>
     <Route path="/">
       <Search search={search} />
-      <MovieList movies={movies} handleFavoriteClick={addLikeMovies} isLoading={isLoading} favouriteComponent={RemoveLike} />
+      <Movies movies={movies} handleFavoriteClick={addLikeMovies} isLoading={isLoading} favoriteComponent={RemoveLike} />
      </Route>
      </Switch>
      </main>
