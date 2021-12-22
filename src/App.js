@@ -85,11 +85,11 @@ return (
 <main>
   <Switch>
     <Route path="/favorites">
-      <Movies movies={favorites} handleFavoriteClick={removeFavoriteMovie} isLoading={isLoading} favoriteComponent={AddLike}/>
+      <Movies movies={favorites} handleFavoriteClick={removeFavoriteMovie} isLoading={isLoading} favoriteComponent={RemoveLike}/>
     </Route>
     <Route path="/">
       <Search search={search} />
-      <Movies movies={movies} handleFavoriteClick={addLikeMovies} isLoading={isLoading} favoriteComponent={RemoveLike} />
+      <Movies movies={movies} handleFavoriteClick={addLikeMovies} isLoading={isLoading} favoriteComponent={AddLike} />
      </Route>
      </Switch>
      </main>

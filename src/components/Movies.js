@@ -1,4 +1,5 @@
 import React from 'react'
+import { Spinner } from 'react-bootstrap';
 import './Movies.css'
 
 
@@ -12,26 +13,29 @@ const Movies =(props)=>{
   
   //const poster = movie.Poster === "N/A" ? DEFAULT_PLACEHOLDER_IMAGE : movie.Poster;
   return(
-    <>
-     {props.movies.map((movie, index) =>(
-       
-       <div className="movie__list">
-       <div className="movie">
-        <h4>{movie.Title}</h4>
-        {movie.id}
-        <img 
-        className="movie__img"
-        src={movie.Poster}
-        />
-        <div className="overlay" onClick={()=>props.handleFavoriteClick(movie)} >
-            <FavoriteComponent />
-          </div>
+    props.isLoading  ?  ( 
+      <Spinner animation="border" variant="light" style={{ margin:'auto', display:'block', marginTop:'12px'}} />
+      ):(
+    <div className="movies">
+      {props.movies.map((movie, index) =>(
+        <div className="movie__list">
+          <div className="movie">
+            <h4>{movie.Title}</h4>
+                  {movie.id}
+              <img 
+              className="movie__img"
+              src={movie.Poster}
+              />
+            <div className="overlay" onClick={()=>props.handleFavoriteClick(movie)} >
+              <FavoriteComponent />
+            </div>
         </div> 
-      
-     
     </div>
         ))}
-  </>
+    </div>
+      )
+    
+  
     )
 }
 export default Movies

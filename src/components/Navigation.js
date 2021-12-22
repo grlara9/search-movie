@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import {FiMenu, FiX} from 'react-icons/fi'
 import Header from './Header'
+import Search from './Search'
 import './Navigation.css'
 
 const Navigation =(props)=>{
@@ -21,7 +22,7 @@ const Navigation =(props)=>{
           <Link to="/" className="nav-logo" onClick={() => setOpen(false)}>
                 <h2>Movie App</h2> 
             </Link>
-
+            
             <div onClick={handleClick} className="nav-icon">
 				{open ? <FiX /> : <FiMenu />}
 			</div>
