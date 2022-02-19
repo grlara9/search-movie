@@ -18,7 +18,7 @@ const KEY= "709d62e0"
           setIsLoading(false)
         }
         
-        const search = async (input) =>{
+        const submitRequest = async (input) =>{
           setIsLoading(true) 
          const res = await axios.get(`https://www.omdbapi.com/?s=${input}&apikey=${KEY}`)
           setMovies(res.data.Search)
@@ -31,7 +31,7 @@ const KEY= "709d62e0"
       },[])
     
       useEffect(()=>{
-        search();
+        submitRequest();
        },[])
     
        
@@ -74,7 +74,10 @@ const KEY= "709d62e0"
         movies,
         isLoading,
         favorites,
-        error
+        error,
+        submitRequest, 
+        addLikeMovies,
+        removeFavoriteMovie
     }
 
 }

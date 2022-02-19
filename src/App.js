@@ -13,8 +13,11 @@ import useMovies from './hooks/useMovies'
 
 
 const App =()=> {
-    const {  movies, isLoading, favorites, error} = useMovies()
+    const {  movies, isLoading, favorites, error, submitRequest, addLikeMovies, removeFavoriteMovie} = useMovies()
 
+    const onSubmit = value =>{
+      submitRequest(value)
+  }
   
 return (
   <div className="container">
@@ -26,7 +29,7 @@ return (
       <Movies movies={favorites} handleFavoriteClick={removeFavoriteMovie} isLoading={isLoading} favoriteComponent={RemoveLike}/>
     </Route>
     <Route path="/">
-      <Search search={search} />
+      <Search search={onSubmit} />
       <Movies movies={movies} handleFavoriteClick={addLikeMovies} isLoading={isLoading} favoriteComponent={AddLike} />
      </Route>
      </Switch>
